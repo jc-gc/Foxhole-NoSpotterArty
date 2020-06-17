@@ -1,10 +1,9 @@
-import requests
 import tkinter as tk
 import os
 import re
 import pygubu
 import math
-from PIL import Image, ImageTk, ImageOps
+from PIL import Image, ImageTk
 from pathlib import Path
 
 imglocation = './Images/Maps/'
