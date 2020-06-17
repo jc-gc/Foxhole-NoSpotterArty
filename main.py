@@ -111,13 +111,13 @@ class Program:
         ic=0
         for i in range(-4,1054,59):
             ic+=1
-            self.imgCanvas.create_line(i,0,i,937, fill='gray')
+            self.imgCanvas.create_line(i,0,i,888, fill='gray')
             self.imgCanvas.create_text(i + 10, 10, text=chr(64+ic))
 
         xc=0
         for x in range(-2,888,59):
             xc+=1
-            self.imgCanvas.create_line(0,x,1054,x, fill='gray')
+            self.imgCanvas.create_line(0,x,1024,x, fill='gray')
             self.imgCanvas.create_text(10, x + 35, text=xc)
 
 
