@@ -8,7 +8,7 @@ from pathlib import Path
 
 imglocation = './Images/Maps/'
 PROJECT_PATH = os.path.dirname(__file__)
-PROJECT_UI = Path(PROJECT_PATH + '/inter.ui')
+PROJECT_UI = Path(PROJECT_PATH + 'inter.ui')
 
 class Program:
     def __init__(self):
