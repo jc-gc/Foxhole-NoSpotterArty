@@ -4,7 +4,6 @@ import re
 import pygubu
 import math
 from PIL import Image, ImageTk
-from pathlib import Path
 
 imglocation = './Images/Maps/'
 PROJECT_PATH = os.path.dirname(__file__)
