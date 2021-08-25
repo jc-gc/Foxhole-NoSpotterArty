@@ -22,7 +22,7 @@
               <property name="padx">0</property>
               <property name="pady">5</property>
               <property name="propagate">True</property>
-              <property name="side">top</property>
+              <property name="side">left</property>
             </layout>
           </object>
         </child>
@@ -33,35 +33,27 @@
             <layout manager="pack">
               <property name="pady">0</property>
               <property name="propagate">True</property>
-              <property name="side">bottom</property>
+              <property name="side">left</property>
             </layout>
           </object>
         </child>
-      </object>
-    </child>
-    <child>
-      <object class="ttk.Frame" id="frame_1_2_3">
-        <property name="height">200</property>
-        <property name="width">200</property>
-        <layout manager="pack">
-          <property name="padx">5</property>
-          <property name="propagate">True</property>
-          <property name="side">top</property>
-        </layout>
+  
+
         <child>
           <object class="ttk.Label" id="lblDistance">
-            <property name="font">{Arial} 24 {}</property>
+            <property name="font">{Arial} 16 {}</property>
             <property name="text" translatable="yes">Distance: </property>
             <layout manager="pack">
+			<property name="padx">150</property>
               <property name="pady">2</property>
               <property name="propagate">True</property>
-              <property name="side">top</property>
+              <property name="side">left</property>
             </layout>
           </object>
         </child>
         <child>
           <object class="ttk.Label" id="lblAzi">
-            <property name="font">{Arial} 24 {}</property>
+            <property name="font">{Arial} 16 {}</property>
             <property name="text" translatable="yes">Azi: </property>
             <layout manager="pack">
               <property name="padx">0</property>
@@ -71,7 +63,7 @@
             </layout>
           </object>
         </child>
-      </object>
+    </object>
     </child>
     <child>
       <object class="ttk.Frame" id="frame_1_2">

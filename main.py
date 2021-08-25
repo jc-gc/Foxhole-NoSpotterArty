@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import *
 import os
 import re
 import pygubu
@@ -24,7 +25,7 @@ class Program:
 
         self.imgCanvas.bind('<Button-1>', self.getPos)
         self.imgCanvas.bind('<Button-3>', self.getTarget)
-        self.imgCanvas.config(cursor='crosshair')
+               
 
         self.tiles = dict()
 
@@ -123,8 +124,13 @@ class Program:
             xc+=1
             self.imgCanvas.create_line(0,x,1024,x, fill='gray')
             self.imgCanvas.create_text(10, x + 35, text=xc)
-
-
+            
+            
+        #scrollbar = Scrollbar(self.mainwindow, orient="vertical",command=self.imgCanvas.yview)
+        #scrollbar.pack(side="right", fill="y")
+        
+        self.imgCanvas.config(cursor='crosshair') #,yscrollcommand=scrollbar.set
+        #self.imgCanvas.configure(scrollregion=self.imgCanvas.bbox("all"))
         self.mainwindow.mainloop()
 
     def pix2m(self, omin, omax, nmin, nmax, ovalue):
