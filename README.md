@@ -16,3 +16,5 @@ Distance and azimuth to to target will be displayed when both positions are set.
 ### Notes
 * Expect a small degree of inaccuracy as the map scale has been determined through trial and error for the time being.
 * Assets used from - https://github.com/clapfoot/warapi
+
+Credit to https://github.com/Opadera for their contributions <3
