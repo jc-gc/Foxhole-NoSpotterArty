@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import *
 import os
 import re
 import pygubu
@@ -24,7 +25,7 @@ class Program:
 
         self.imgCanvas.bind('<Button-1>', self.getPos)
         self.imgCanvas.bind('<Button-3>', self.getTarget)
-        self.imgCanvas.config(cursor='crosshair')
+               
 
         self.tiles = dict()
 
@@ -53,22 +54,17 @@ class Program:
         mx = self.pix2m(0,1078.84,0 ,18*128,x)
         my = self.pix2m(0,1078.84,0 ,18*128,y)
 
-        howieoffset = self.pix2m(0, 18*128, 0, 1078.84, 150)
-        mortaroffset = self.pix2m(0, 18 * 128, 0, 1078.84, 65)
+
 
         if self.pos is not None:
             self.imgCanvas.delete(self.pos['posdot'])
-            for ring in self.pos['rngrings']:
-                self.imgCanvas.delete(ring)
+
         posdot = self.imgCanvas.create_oval(x-3,y-3,x+3,y+3, fill='green')
-        rngrings = [self.imgCanvas.create_oval(x-howieoffset,y-howieoffset,x+howieoffset,y+howieoffset),
-                    self.imgCanvas.create_oval(x-mortaroffset,y-mortaroffset,x+mortaroffset,y+mortaroffset)]
         self.pos = {'x': x,
                     'y': y,
                     'mx': mx,
                     'my': my,
-                    'posdot': posdot,
-                    'rngrings': rngrings}
+                    'posdot': posdot}
 
         self.updateVal()
 
@@ -76,15 +72,25 @@ class Program:
         x, y = event.x, event.y
         mx = self.pix2m(0, 1078.84, 0, 18 * 128, x)
         my = self.pix2m(0, 1078.84, 0, 18 * 128, y)
+        
+        howieoffset = self.pix2m(0, 18*128, 0, 1078.84, 150)
+        mortaroffset = self.pix2m(0, 18 * 128, 0, 1078.84, 65)
 
         if self.target is not None:
             self.imgCanvas.delete(self.target['tardot'])
+            for ring in self.target['rngrings']:
+                self.imgCanvas.delete(ring)
         tardot = self.imgCanvas.create_oval(x - 3, y - 3, x + 3, y + 3, fill='red')
+        
+        
+        rngrings = [self.imgCanvas.create_oval(x-howieoffset,y-howieoffset,x+howieoffset,y+howieoffset),
+            self.imgCanvas.create_oval(x-mortaroffset,y-mortaroffset,x+mortaroffset,y+mortaroffset)]
         self.target = {'x': x,
                        'y': y,
                        'mx': mx,
                        'my': my,
-                       'tardot': tardot}
+                       'tardot': tardot,
+                       'rngrings': rngrings}
 
         self.updateVal()
 
@@ -118,8 +124,13 @@ class Program:
             xc+=1
             self.imgCanvas.create_line(0,x,1024,x, fill='gray')
             self.imgCanvas.create_text(10, x + 35, text=xc)
-
-
+            
+            
+        #scrollbar = Scrollbar(self.mainwindow, orient="vertical",command=self.imgCanvas.yview)
+        #scrollbar.pack(side="right", fill="y")
+        
+        self.imgCanvas.config(cursor='crosshair') #,yscrollcommand=scrollbar.set
+        #self.imgCanvas.configure(scrollregion=self.imgCanvas.bbox("all"))
         self.mainwindow.mainloop()
 
     def pix2m(self, omin, omax, nmin, nmax, ovalue):

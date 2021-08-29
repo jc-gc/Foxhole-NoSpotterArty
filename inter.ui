@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.0">
+  <object class="ttk.Frame" id="frame_1">
+    <property name="height">200</property>
+    <property name="width">200</property>
+    <layout manager="pack">
+      <property name="propagate">True</property>
+      <property name="side">top</property>
+    </layout>
+    <child>
+      <object class="ttk.Frame" id="frame_4">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="pack">
+          <property name="padx">10</property>
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="ttk.Combobox" id="cmbBox">
+            <layout manager="pack">
+              <property name="padx">0</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="side">left</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="btnLoad">
+            <property name="command">loadimg</property>
+            <property name="text" translatable="yes">Load/Clear Tile</property>
+            <layout manager="pack">
+              <property name="pady">0</property>
+              <property name="propagate">True</property>
+              <property name="side">left</property>
+            </layout>
+          </object>
+        </child>
+  
+
+        <child>
+          <object class="ttk.Label" id="lblDistance">
+            <property name="font">{Arial} 16 {}</property>
+            <property name="text" translatable="yes">Distance: </property>
+            <layout manager="pack">
+			<property name="padx">150</property>
+              <property name="pady">2</property>
+              <property name="propagate">True</property>
+              <property name="side">left</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="lblAzi">
+            <property name="font">{Arial} 16 {}</property>
+            <property name="text" translatable="yes">Azi: </property>
+            <layout manager="pack">
+              <property name="padx">0</property>
+              <property name="pady">2</property>
+              <property name="propagate">True</property>
+              <property name="side">left</property>
+            </layout>
+          </object>
+        </child>
+    </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="frame_1_2">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="pack">
+          <property name="propagate">True</property>
+          <property name="side">bottom</property>
+        </layout>
+        <child>
+          <object class="tk.Canvas" id="imgCanvas">
+            <property name="closeenough">0</property>
+            <property name="height">888</property>
+            <property name="state">normal</property>
+            <property name="width">1024</property>
+            <layout manager="pack">
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="side">top</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
